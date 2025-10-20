@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Job;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
@@ -9,7 +10,9 @@ class JobController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() {}
+    public function index() {
+        return view('job.index', ['jobs'=>Job::all()]);
+    }
 
     /**
      * Show the form for creating a new resource.
